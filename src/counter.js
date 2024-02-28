@@ -7,6 +7,14 @@ export const initializeCounter = (doc = globalThis.document) => {
 
   const render = () => {
     countElement.textContent = count;
+
+    if (count >= 0) {
+      import('./banner').then(({ addBanner }) => addBanner(''));
+    } else {
+      import('./banner').then(({ addBanner }) =>
+        addBanner('Counter is < 0 :('),
+      );
+    }
   };
 
   const increment = () => {
