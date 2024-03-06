@@ -9,7 +9,7 @@ export const addBanner = (text) => {
   el.textContent = text;
   el.classList.add(styles.content);
 
-  // import('./banner.module.css').then((styles) => {
-  //   el.classList.add(styles.content);
-  // });
+  import('./banner.module.css').then((styles) => {
+    el.classList.add(styles.content);
+  });
 };
